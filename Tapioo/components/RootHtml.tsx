@@ -11,14 +11,14 @@ const enFont = Manrope({ subsets: ['latin'], variable: '--font-en', display: 'sw
 // Before first paint: apply the saved theme (no flash), and flag low-end devices
 // (≤4 GB RAM or ≤4 cores, or Data Saver on) as "lite" so heavy effects are skipped.
 const PREPAINT = `try{var d=document.documentElement,t=localStorage.getItem('tapioo-theme');
-d.dataset.theme=t||(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark');
+d.dataset.theme=t||'light';
 var n=navigator,c=n.connection;if((n.deviceMemory&&n.deviceMemory<=4)||(n.hardwareConcurrency&&n.hardwareConcurrency<=4)||(c&&c.saveData))d.classList.add('lite');}catch(e){}`;
 
 /** The <html> shell shared by the Arabic (/) and English (/en) root layouts. */
 export default function RootHtml({ lang, children }: { lang: Lang; children: React.ReactNode }) {
   const fonts = lang === 'ar' ? `${arDisplay.variable} ${arBody.variable}` : enFont.variable;
   return (
-    <html lang={lang} dir={lang === 'ar' ? 'rtl' : 'ltr'} data-theme="dark" className={fonts} suppressHydrationWarning>
+    <html lang={lang} dir={lang === 'ar' ? 'rtl' : 'ltr'} data-theme="light" className={fonts} suppressHydrationWarning>
       <head>
         <Script id="prepaint" strategy="beforeInteractive">{PREPAINT}</Script>
       </head>

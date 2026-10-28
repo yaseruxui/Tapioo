@@ -11,19 +11,12 @@ import QuickView from './QuickView';
 import MobileBar from './MobileBar';
 import FloatingWhatsApp from './FloatingWhatsApp';
 import DevNotice from './DevNotice';
-import { RatingChip, SideDots } from './ScrollUi';
 import Nav from './sections/Nav';
 import Hero from './sections/Hero';
-import Marquee from './sections/Marquee';
-import Statement from './sections/Statement';
-import Story from './sections/Story';
-import Showcase from './sections/Showcase';
-import ConnectGallery from './sections/ConnectGallery';
-import Compare from './sections/Compare';
-import CaseStudy from './sections/CaseStudy';
+import Shop from './sections/Shop';
+import Steps from './sections/Steps';
 import Reviews from './sections/Reviews';
 import Trust from './sections/Trust';
-import Platform from './sections/Platform';
 import CustomCta from './sections/CustomCta';
 import Faq from './sections/Faq';
 import Footer from './sections/Footer';
@@ -55,24 +48,16 @@ export default function HomePage({ lang }: { lang: Lang }) {
     <LangProvider lang={lang} t={t}>
       <CartProvider>
         <Nav />
-        <SideDots {...p} />
         <main>
           <Hero {...p} />
-          <Marquee {...p} />
-          <Statement {...p} />
-          <Story />
-          <Compare {...p} />
-          <Showcase />
-          <ConnectGallery />
-          <CaseStudy {...p} />
-          <Platform />
+          <Shop />
+          <Steps {...p} />
           <Reviews {...p} />
           <Trust {...p} />
-          <Faq {...p} />
           <CustomCta {...p} />
+          <Faq {...p} />
         </main>
         <Footer {...p} />
-        <RatingChip {...p} />
         <FloatingWhatsApp />
         <MobileBar />
         <QuickView />

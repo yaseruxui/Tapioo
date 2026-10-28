@@ -12,7 +12,7 @@ const STORAGE_KEY = 'tapioo-theme';
  * paint by the inline script in RootHtml.
  */
 export default function ThemeToggle({ label }: { label: string }) {
-  const [theme, setTheme] = useState<Theme>('dark');
+  const [theme, setTheme] = useState<Theme>('light');
 
   useEffect(() => {
     setTheme(document.documentElement.dataset.theme === 'light' ? 'light' : 'dark');

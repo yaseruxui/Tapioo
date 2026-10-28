@@ -155,4 +155,14 @@ export const PRODUCTS: Product[] = [
 // ---------- helpers ----------
 export const waLink = (text: string) => `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(text)}`;
 export const getProduct = (id: string) => PRODUCTS.find(p => p.id === id);
+
+/** Products that have a catalog photo in /public/products/<id>-a.webp. The rest fall back to the SVG art. */
+const PHOTO_IDS = new Set([
+  'rev-card', 'rev-stand', 'rev-sticker',
+  'wa-stand', 'social-stand', 'web-stand',
+  'wa-card', 'social-card', 'biz-card',
+  'social-sticker', 'menu-sticker',
+  'biz-keychain',
+]);
+export const photoOf = (id: string) => (PHOTO_IDS.has(id) ? `/products/${id}-a.webp` : undefined);
 export const copy = (p: Product, lang: Lang) => p[lang];

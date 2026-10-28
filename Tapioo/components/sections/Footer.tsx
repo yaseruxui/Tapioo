@@ -28,7 +28,6 @@ export default function Footer({ t, lang }: SectionProps) {
         </div>
       </div>
       <div className="foot-bottom"><span>{f.rights}</span></div>
-      <div className="giant" aria-hidden="true">tapioo</div>
     </footer>
   );
 }
